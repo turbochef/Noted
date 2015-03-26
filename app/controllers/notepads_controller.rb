@@ -10,6 +10,8 @@ class NotepadsController < ApplicationController
   # GET /notepads/1
   # GET /notepads/1.json
   def show
+    @milestones = @notepad.milestones
+    @milestone = @milestones.build
   end
 
   # GET /notepads/new

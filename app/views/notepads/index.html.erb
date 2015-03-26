@@ -9,13 +9,18 @@
       <th>Content</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> 
 
   <tbody>
     <% @notepads.each do |notepad| %>
       <tr>
         <td><%= notepad.name %></td>
         <td><%= notepad.content %></td>
+
+        <% notepad.milestones.each do |milestone| %>
+          <td><strong>milestone:</strong> <%= milestone.name %>, <strong>due</strong><%= milestone.due %></td>
+        <% end %>
+
         <td><%= link_to 'Show', notepad %></td>
         <td><%= link_to 'Edit', edit_notepad_path(notepad) %></td>
         <td><%= link_to 'Destroy', notepad, method: :delete, data: { confirm: 'Are you sure?' } %></td>

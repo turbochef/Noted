@@ -10,5 +10,18 @@
   <%= @notepad.content %>
 </p>
 
+<% @notepad.milestones.each do |milestone| %>
+	<p><%= milestone.name %>, <%= milestone.due %></p>
+<% end %>
+<%= form_for([@notepad, @notepad.milestones.build]) do |f| %>
+	<%= f.label :milestone %>
+	<%= f.text_field :name %>
+	<br>
+	<%= f.label :due %>
+	<%= f.date_field :due %>
+	<br>
+	<%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit', edit_notepad_path(@notepad) %> |
 <%= link_to 'Back', notepads_path %>
