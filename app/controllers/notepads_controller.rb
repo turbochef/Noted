@@ -1,5 +1,5 @@
 class NotepadsController < ApplicationController
-  before_action :set_notepad, only: [:show, :edit, :update, :destroy]
+  before_action :set_notepad, only: [:edit_text, :edit_name ,:show, :edit, :update, :destroy]
 
   # GET /notepads
   # GET /notepads.json
@@ -21,6 +21,12 @@ class NotepadsController < ApplicationController
 
   # GET /notepads/1/edit
   def edit
+  end
+
+  def edit_name
+  end
+
+  def edit_text
   end
 
   # POST /notepads

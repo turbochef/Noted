@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :notepads do
-    resources :milestones 
+    resources :milestones
+    member do
+      get 'edit_name'
+      get 'edit_text'
+    end 
   end
 
 
