@@ -2,7 +2,7 @@
 
 
 <div class="col-xs-12">
-<h1>Listing Notepads<%= link_to 'New Notepad', new_notepad_path, class:"btn btn-default" %></h1>
+<h1>Listing Notepads<%= link_to '<i class="fa fa-plus-square"></i>'.html_safe, new_notepad_path, class:"btn btn-default" %></h1>
 </div>
 
 
@@ -11,18 +11,18 @@
     <div class="col-xs-8">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3><%= notepad.name %></h3>
-                <!-- buttons -->
-                        <%= link_to 'Show', notepad, class:"btn btn-default" %>
-                        <%= link_to 'Edit', edit_name_notepad_path(notepad), class:"btn btn-default"  %>
-                        <%= link_to 'Destroy', notepad, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default"  %>
-                <!-- buttons -->
+                <h4><%= notepad.name %><!-- buttons -->
+                        <%= link_to '<i class="fa fa-search"></i>'.html_safe, notepad, class:"btn btn-default" %>
+                        <%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_name_notepad_path(notepad), class:"btn btn-default"  %>
+                        <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, notepad, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default"  %>
+                <!-- buttons --></h4>
+                
             </div> 
 
 
             <!-- content -->
             <div class="panel-body">
-                <%= link_to 'Edit Notepad', edit_text_notepad_path(notepad), class: 'btn btn-default' %>
+                <%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_text_notepad_path(notepad), class: 'btn btn-default' %>
                 <%= notepad.content %>
             </div>
             <!-- content -->
@@ -30,7 +30,7 @@
     </div>
 
     <ul class="list-group col-xs-4">
-        <li class="list-group-item active">Milestones</li>
+        <li class="list-group-item active">Upcoming</li>
         <% notepad.milestones.each do |milestone| %>
         <li class="list-group-item"><%= milestone.name %><span class="badge"><%= milestone.due %></span></li>
         <% end %>
