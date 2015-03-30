@@ -14,7 +14,7 @@
                 <h3><%= notepad.name %></h3>
                 <!-- buttons -->
                         <%= link_to 'Show', notepad, class:"btn btn-default" %>
-                        <%= link_to 'Edit', edit_notepad_path(notepad), class:"btn btn-default"  %>
+                        <%= link_to 'Edit', edit_name_notepad_path(notepad), class:"btn btn-default"  %>
                         <%= link_to 'Destroy', notepad, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default"  %>
                 <!-- buttons -->
             </div> 
@@ -22,6 +22,7 @@
 
             <!-- content -->
             <div class="panel-body">
+                <%= link_to 'Edit Notepad', edit_text_notepad_path(notepad), class: 'btn btn-default' %>
                 <%= notepad.content %>
             </div>
             <!-- content -->
